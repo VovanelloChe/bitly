@@ -24,7 +24,7 @@ pip install -r requirements.txt
 В командной строке необходимо выполнить команду:
 
 ```
-python bitly.py <link>
+python main.py <link>
 ```
 
 ### Цель проекта
