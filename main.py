@@ -5,7 +5,7 @@ from os.path import join, dirname
 import argparse
 
 
-def createParser():
+def create_parser():
     parser = argparse.ArgumentParser(description='Проверка ссылки')
     parser.add_argument('link')
 
@@ -35,7 +35,9 @@ def check_link_clicks_summary(url, token):
         return None
 
 
-def main(link):
+def main():
+    parser = create_parser()
+    link = parser.parse_args().link
     if not requests.get(link).ok:
         print("Wrong link")
         return
@@ -53,6 +55,4 @@ def main(link):
 
 if __name__ == '__main__':
 
-    parser = createParser()
-    args = parser.parse_args()
-    main(args.link)
+    main()
